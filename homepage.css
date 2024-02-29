@@ -124,10 +124,10 @@ button:hover {
     margin-right: 10px; /* Add some space between the divs */
 }
 .products{
-    background-color:beige
+    background-color:rgb(198, 211, 168);
 }
 span{
     font-size: x-large;
     font-weight: bolder;
-    
+
 }
