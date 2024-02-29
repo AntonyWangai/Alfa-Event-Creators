@@ -1,0 +1,115 @@
+
+.heading{
+    color:gold;
+    font-size: 50px;
+    margin-top: 20px;
+    padding-top: 50px;
+     
+ 
+ }
+ 
+ .headdiv{
+     height:200px;
+     background-image: url('./venue.jpg');
+     background-size:cover;
+     background-repeat: no-repeat;
+     text-align: center;
+    
+ }    
+     
+.gradimg{
+    border-radius: 50%;
+    height: auto;
+    width: 100px ;
+    
+}
+
+.graddiv{
+    display: inline-block;
+    margin-right:3%;
+   
+}
+
+.section2{
+    align-items: center;
+    display: flex;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+ 
+body{
+    background-color:azure ;
+    margin:0%;
+}
+
+.lbuttons{
+    background-color: green;
+    height: 38px;
+    text-align:right;
+    padding: 7px;
+    padding-top: 10px;
+    
+
+}
+
+
+.descriptiondiv{
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+    font-family: 'Courier New', Courier, monospace;
+    font-size:x-large;
+    font-weight: bold;
+}
+
+
+.descriptionp{
+    display: inline-block;
+    
+}
+
+
+button{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+.bottom{
+    background-image: url('./venue2.jpg');
+    background-size:contain;
+    text-align: center;
+    color:gold;
+    padding:20px;
+
+    
+}
+
+.motto{
+    font-size: 26px;
+    font-family:sans-serif;
+    font-weight: 700;
+    padding: 10px;
+    margin:20px;
+}
