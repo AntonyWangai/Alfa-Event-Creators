@@ -6,3 +6,8 @@ document.getElementById("signupButton").addEventListener("click", function() {
  
   window.location.href = "signup.html";
 });
+document.getElementById("about-us").addEventListener("click", function() {
+ 
+  window.location.href = "about.html";
+});
+
