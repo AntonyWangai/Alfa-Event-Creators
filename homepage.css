@@ -10,7 +10,7 @@
  
  .headdiv{
      height:200px;
-     background-image: url('./venue.jpg');
+     background-image: url('Pimage1.jpg');
      background-size:cover;
      background-repeat: no-repeat;
      text-align: center;
@@ -97,12 +97,12 @@ button:hover {
 
 
 .bottom{
-    background-image: url('./venue2.jpg');
+    background-color: bisque;
     background-size:contain;
     text-align: center;
     color:gold;
     padding:20px;
-
+    
     
 }
 
@@ -112,4 +112,22 @@ button:hover {
     font-weight: 700;
     padding: 10px;
     margin:20px;
+}
+.product-container {
+    white-space: nowrap; /* Prevents wrapping onto multiple lines */
+    display: flex;
+    
+}
+
+.pro {
+    display: inline-block; /* Displays the divs next to each other */
+    margin-right: 10px; /* Add some space between the divs */
+}
+.products{
+    background-color:rgb(198, 211, 168);
+}
+span{
+    font-size: x-large;
+    font-weight: bolder;
+
 }
