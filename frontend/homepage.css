@@ -10,7 +10,7 @@
  
  .headdiv{
      height:200px;
-     background-image: url('Pimage1.jpg');
+     background-image: url('./images/Pimage1.jpg');
      background-size:cover;
      background-repeat: no-repeat;
      text-align: center;
