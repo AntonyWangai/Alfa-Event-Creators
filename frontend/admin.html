@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Management</title>
+  <style>
+    /* styles.css */
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li, form, button {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Main section styles */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"] {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Birthday list styles */
+#birthday-items {
+  list-style-type: none;
+}
+
+.birthday-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Birthday Management</h1>
+  </header>
+
+  <main>
+    <section id="birthday-form">
+      <h2>Add Birthday</h2>
+      <form id="add-birthday-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <button type="submit">Add Birthday</button>
+      </form>
+    </section>
+
+    <section id="birthday-list">
+      <h2>Birthday List</h2>
+      <ul id="birthday-items">
+        <!-- Birthday items will be dynamically added here -->
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // scripts.js
+
+// Function to add a birthday to the list
+function addBirthday(event) {
+  event.preventDefault();
+
+  // Get form values
+  const name = document.getElementById("name").value;
+  const date = document.getElementById("date").value;
+
+  // Create list item with birthday details
+  const listItem = document.createElement("li");
+  listItem.classList.add("birthday-item");
+  listItem.innerHTML = `<strong>${name}</strong> - ${date}
+                        <button class="delete-btn">Delete</button>`;
+
+  // Append list item to the birthday list
+  const birthdayList = document.getElementById("birthday-items");
+  birthdayList.appendChild(listItem);
+
+  // Clear form fields
+  document.getElementById("name").value = "";
+  document.getElementById("date").value = "";
+}
+
+// Function to delete a birthday from the list
+function deleteBirthday(event) {
+  if (event.target.classList.contains("delete-btn")) {
+    const listItem = event.target.parentElement;
+    const birthdayList = document.getElementById("birthday-items");
+    birthdayList.removeChild(listItem);
+  }
+}
+
+// Event listeners
+document.getElementById("add-birthday-form").addEventListener("submit", addBirthday);
+document.getElementById("birthday-items").addEventListener("click", deleteBirthday);
+
+  </script>
+</body>
+</html>
