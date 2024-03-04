@@ -22,7 +22,7 @@ window.location.href='./events/funeral.html'
 );
 document.querySelector(".outingEvent").addEventListener('click',function()
 {
-window.location.href='./events/outing.html'
+window.location.href='./events/outings.html'
 }
 );
 document.querySelector(".graduationEvent").addEventListener('click',function()
@@ -35,5 +35,10 @@ document.querySelector(".weddingEvent").addEventListener('click',function()
 window.location.href='./events/wedding.html'
 }
 );
+document.querySelector("#contacts").addEventListener('click',
+function()
+{
+  window.location.href="contact.html"
+});
 
 
