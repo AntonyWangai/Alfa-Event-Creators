@@ -1,0 +1,100 @@
+.headingContainer{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    
+}
+
+.head{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('./confrence.jpg');
+    background-size: 100% 100%;
+    height:60vh;
+    width:80vw;
+    border: solid green 2px;
+    border-radius: 7px;
+}
+
+.heading{
+    display:inline-block;
+    width:60%;
+    font-family: sans-serif;
+    color:darkgreen;
+    text-align: center;
+    border: solid darkgreen 3px;
+    margin-bottom: 10%;
+    font-size: 20px;
+    padding:10px;
+}
+
+.searchbar, .searchButton{
+    border: white;
+    border-radius: 5px;
+    background-color: white;
+    color:darkgreen;
+}
+
+
+.imageDiv{
+    
+    
+}
+
+img{
+    height:200px ;
+    width:200px;
+}
+
+.venues > div {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    border: solid darkgreen 2px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    background-color: #e4e093;
+}
+
+.venues h2{
+    color:darkgreen;
+    max-width: 200px;
+}
+
+.venues .imageDiv{
+    margin-right: 20px;
+    border-right: solid darkgreen 2px;
+    padding-right: 10px;
+    margin-top: 10px;
+
+}
+
+.venues a{
+    display: block;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+
+.venues p {
+    font-family: sans-serif;
+    font-size: 20px;
+    color:#1CA69D;
+}
+
+.venues span{
+
+}
+
+.popular{
+    font-size: 30px;
+    font-family: sans-serif;
+    color:darkgreen;
+    font-weight: 700;
+
+}
