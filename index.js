@@ -10,4 +10,7 @@ document.getElementById("about-us").addEventListener("click", function() {
  
   window.location.href = "about.html";
 });
-
+document.getElementById("contacts").addEventListener("click", function() {
+ 
+  window.location.href = "contact.html";
+});
