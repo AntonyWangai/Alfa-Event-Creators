@@ -1,0 +1,74 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li, form, button {
+  margin: 0;
+  padding: 0;
+
+}
+div{
+  margin: 50px;
+  font-size: x-large;
+  background-color: #96aa68;
+  padding: 25px;
+}
+.package:hover {
+  background-color: #859c4e;
+}
+
+dt{
+  font-weight: bold;
+}
+/* Header styles */
+header {
+  background-color: #cf4e4e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.funeral{
+  
+    background-color: #1d1919;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+#add-birthday-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+input[type="text"],
+input[type="date"] {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Birthday list styles */
+#birthday-items {
+  list-style-type: none;
+}
+
+.birthday-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
