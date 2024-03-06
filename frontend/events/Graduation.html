@@ -101,43 +101,80 @@
       <script>
         // Function to add a birthday to the list
         function addBirthday(event) {
-          event.preventDefault();
-      
-          // Get form values
-          const name = document.getElementById("Yname").value;
-          const date = document.getElementById("date").value;
-          const pname = document.getElementById("pname").value;
-          const eventID = document.getElementById("eventID").value;
-      
-          // Create list item with birthday details
-          const listItem = document.createElement("li");
-          listItem.classList.add("birthday-item");
-          listItem.innerHTML = `<strong>${name}</strong> - ${eventID} -${pname} - ${date} 
-                                <button class="delete-btn">Delete</button>`;
-      
-          // Append list item to the birthday list
-          const birthdayList = document.getElementById("birthday-items");
-          birthdayList.appendChild(listItem);
-      
-          // Clear form fields
-          document.getElementById("Yname").value = "";
-          document.getElementById("date").value = "";
-          document.getElementById("pname").value = "";
-          document.getElementById("eventID").value = "";
-        }
-      
-        // Function to delete a birthday from the list
-        function deleteBirthday(event) {
-          if (event.target.classList.contains("delete-btn")) {
-            const listItem = event.target.parentElement;
-            const birthdayList = document.getElementById("birthday-items");
-            birthdayList.removeChild(listItem);
-          }
-        }
-      
-        // Event listeners
-        document.getElementById("add-birthday-form").addEventListener("submit", addBirthday);
-        document.getElementById("birthday-items").addEventListener("click", deleteBirthday);
+  event.preventDefault();
+
+  // Get form values
+  const name = document.getElementById("Yname").value;
+  const date = document.getElementById("date").value;
+  const pname = document.getElementById("pname").value;
+  const eventID = document.getElementById("eventID").value;
+
+  // Create list item with birthday details
+  const listItem = document.createElement("li");
+  listItem.classList.add("birthday-item");
+  listItem.innerHTML = `<strong>${name}</strong> - ${eventID} -${pname} - ${date}
+                        <button class="delete-btn">Delete</button>`;
+
+  // Append list item to the birthday list
+  const birthdayList = document.getElementById("birthday-items");
+  birthdayList.appendChild(listItem);
+
+  // Save to local storage
+  saveToLocalStorage(name, date, pname, eventID);
+
+  // Clear form fields
+  document.getElementById("Yname").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("pname").value = "";
+  document.getElementById("eventID").value = "";
+}
+
+// Function to delete a birthday from the list
+function deleteBirthday(event) {
+  if (event.target.classList.contains("delete-btn")) {
+    const listItem = event.target.parentElement;
+    const birthdayList = document.getElementById("birthday-items");
+    birthdayList.removeChild(listItem);
+
+    // Remove from local storage
+    removeFromLocalStorage(listItem.querySelector('strong').textContent);
+  }
+}
+
+// Save birthday to local storage
+function saveToLocalStorage(name, date, pname, eventID) {
+  let birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
+  birthdays.push({ name, date, pname, eventID });
+  localStorage.setItem('birthdays', JSON.stringify(birthdays));
+}
+
+// Remove birthday from local storage
+function removeFromLocalStorage(name) {
+  let birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
+  birthdays = birthdays.filter(birthday => birthday.name !== name);
+  localStorage.setItem('birthdays', JSON.stringify(birthdays));
+}
+
+// Load birthdays from local storage
+function loadBirthdaysFromLocalStorage() {
+  const birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
+  birthdays.forEach(birthday => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("birthday-item");
+    listItem.innerHTML = `<strong>${birthday.name}</strong> - ${birthday.eventID}- ${birthday.pname} - ${birthday.date}
+                          <button class="delete-btn">Delete</button>`;
+    const birthdayList = document.getElementById("birthday-items");
+    birthdayList.appendChild(listItem);
+  });
+}
+
+// Event listeners
+document.getElementById("add-birthday-form").addEventListener("submit", addBirthday);
+document.getElementById("birthday-items").addEventListener("click", deleteBirthday);
+
+// Load birthdays from local storage when the page loads
+window.addEventListener('load', loadBirthdaysFromLocalStorage);
+
       </script>
       
 </body>
