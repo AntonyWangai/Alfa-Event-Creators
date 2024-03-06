@@ -1,9 +1,10 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-$serverName = "sql109.infinityfree.com";
-$userName = "if0_36103335";
-$password = "2PhSWsD8cc7HA";
-$dataBaseName = "if0_36103335_Events";
+
+$serverName = "localhost";
+$userName = "root";
+$password = "";
+$dataBaseName = "alphaEvents";
 
 
 $conn = new mysqli($serverName, $userName, $password, $dataBaseName);
