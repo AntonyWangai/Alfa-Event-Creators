@@ -13,11 +13,11 @@ $conn = new mysqli($serverName, $userName, $password, $dataBaseName);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    $name = $_POST['fullname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    $sql = "INSERT INTO signUp (FullName,Email,Password) VALUES ('$name', '$email', '$password')";
+    $name = $_POST['name'];
+    $eventID = $_POST['eventID'];
+    $package = $_POST['package'];
+    $date = $_POST['date']
+    $sql = "INSERT INTO event (name,eventID,package,date) VALUES ('$name', '$eventID', '$package','$date')";
 
     $res = $conn->query($sql);
     if ($res) {
@@ -27,7 +27,7 @@ if ($conn->connect_error) {
     }
 }
 
-$sql = "SELECT * FROM Students";
+$sql = "SELECT * FROM event";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
