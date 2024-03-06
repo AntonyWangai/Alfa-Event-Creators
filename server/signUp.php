@@ -2,10 +2,10 @@
 
 header("Access-Control-Allow-Origin: *");
 
-$serverName = "sql109.infinityfree.com";
-$userName = "if0_36103335";
-$password = "2PhSWsD8cc7HA";
-$dataBaseName = "if0_36103335_Events";
+$serverName = "localhost";
+$userName = "root";
+$password = "Atlantis001";
+$dataBaseName = "alpha-events";
 
 
 $conn = new mysqli($serverName, $userName, $password, $dataBaseName);
@@ -16,7 +16,7 @@ if ($conn->connect_error) {
     $name = $_POST['fullname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
+
     $sql = "INSERT INTO signUp (FullName,Email,Password) VALUES ('$name', '$email', '$password')";
 
     $res = $conn->query($sql);
@@ -27,7 +27,7 @@ if ($conn->connect_error) {
     }
 }
 
-$sql = "SELECT * FROM Students";
+$sql = "SELECT * FROM signup";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

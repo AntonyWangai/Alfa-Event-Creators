@@ -20,42 +20,41 @@
       <button type="submit">Sign Up</button>
     </form>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("signup-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
+     document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("signup-form").addEventListener("submit", function (event) {
+    event.preventDefault();
 
-            var fullname = document.getElementById("fullname").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var confirmpass = document.getElementById("confirmpass").value;
+    var fullname = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirmpass = document.getElementById("confirmpass").value;
 
-            if (password != confirmpass) {
-              alert("Password and Confirm Password do not match");
-            } else {
-              alert("Welcome " + fullname + "!");
+    /* if (password != confirmpass) {
+         alert("Password and Confirm Password do not match");
+       } else {
+         alert("Welcome " + fullname + "!");
+    */
 
-              const url =
-                "http://localhost:4000/Documents/Alfa-Event-Creators/server/signUp.php";
-              let fData = new FormData();
-              fData.append("fullname", fullname);
-              fData.append("email", email);
-              fData.append("password", password);
-              fetch(url, {
-                method: "POST",
-                body: fData,
-              })
-                .then((response) => response.json())
-                .then((data) => {
-                  console.log(data);
-                })
-                .catch((error) => {
-                  console.log(error);
-                });
-            }
-          });
-      });
+    const url = "http://localhost/server/signUp.php";
+    let fData = new FormData();
+    fData.append("fullname", fullname);
+    fData.append("email", email);
+    fData.append("password", password);
+    fetch(url, {
+      method: "POST",
+      body: fData,
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }); // <- Add closing parenthesis here
+});
+
+      
     </script>
   </body>
 </html>
