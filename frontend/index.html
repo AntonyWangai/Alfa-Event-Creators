@@ -43,49 +43,25 @@
 
            </div>
     
+ 
     </section>
-    <section class="products">
-        <div class="product-container"></div>>
-                <div class="pro">
-                    <img src="./images/Pimage1.jpg" alt="" width="350px" height="256px">
-                    <div class="des">
-                        <button class="outingEvent"><span>OUTINGS</span></button>
-                        <h3>Let us organize fun outings for you</h3>  
-                    </div>
-                 </div>
-            <div class="pro" >
-                <img src="./images/Pimage3.jpg" alt="" width="350px" height="256px">
-                    <div class="des">
-                       <button class="weddingEvent"> <span>WEDDINGS</span></button>
-                        <h3>Let this one time event me memorable </h3>
-                    </div>  
-            </div>
-            <div class="pro">
-                <img src="images/graduation.jpg" alt="" width="350px" height="256px">
-                <div class="des">
-                    <button class="graduationEvent"><span>GRADUATIONS</span></button>
-                    <h3>Graduation day is a one time special day</h3>  
-                </div>
-             </div>
-             <div class="pro">
-                <img src="./images/funeral.jpg" alt="Weuh" width="350px" height="256px">
-                <div class="des">
-                    <button class="funeralEvent"><span>FUNERALS</span></button>
-                    <h3>A send-off that is custom-made</h3>  
-                </div>
-             </div>
-             <div class="pro">
-                <img src="images/Birthday.jpg" alt="Weuh" width="350px" height="256px">
-                <div class="des">
-                    <button class="birthdayEvent"><span>BIRTHDAYS</span></button>
-                    <h3>Birthday party with friends and family</h3>  
-                </div>
-             </div>
-             
-</div>
-        </div>
-    </section>
-<script src="index.js"></script>
-
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            window.location.href = "loginpage.html";
+        });
+    
+        document.getElementById("signupButton").addEventListener("click", function() {
+            window.location.href = "signup.html";
+        });
+    
+        document.getElementById("about-us").addEventListener("click", function() {
+            window.location.href = "about.html";
+        });
+    
+        document.getElementById("contacts").addEventListener('click', function() {
+            window.location.href = "contact.html";
+        });
+    </script>
+    
 </body>
 </html>

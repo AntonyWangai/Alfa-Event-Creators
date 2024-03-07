@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 
 $serverName = "localhost";
-$userName = "root@localhost";
+$userName = "root";
 $password = "";
 $dataBaseName = "alfa-events";
 
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "INSERT INTO signUp (FullName,Email,Password) VALUES ('$name', '$email', '$password')";
+    $sql = "INSERT INTO signup (FullName,Email,Password) VALUES ('$name', '$email', '$password')";
 
     $res = $conn->query($sql);
     if ($res) {

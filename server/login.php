@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 $serverName = "localhost";
-$userName = "root@localhost";
+$userName = "root";
 $password = "";
 $dataBaseName = "alfa-events";
 
