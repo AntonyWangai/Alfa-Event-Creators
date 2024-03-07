@@ -16,8 +16,8 @@ if ($conn->connect_error) {
     $email = $_POST['email'];
     $eventID = $_POST['eventID'];
     $pname = $_POST['pname'];
-    $date = $_POST['date']
-    $sql = "INSERT INTO event (name,eventID,package,date) VALUES ('$email', '$eventID', '$pname','$date')";
+    $date = $_POST['date'];
+    $sql = "INSERT INTO event (email,eventID,package,date) VALUES ('$email', '$eventID', '$pname','$date')";
 
     $res = $conn->query($sql);
     if ($res) {

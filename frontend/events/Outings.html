@@ -78,7 +78,7 @@
         <input type="text" id="pname" name="pname" required />
         <label for="date">Date:</label>
         <input type="date" id="date" name="date" required />
-        <button type="submit">Sign Up</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
     <script>
@@ -91,6 +91,7 @@
               var pname = document.getElementById("pname").value;
               var date = document.getElementById("date").value;
   
+  console.log(email+eventID+pname+date);
               const url = "http://localhost/server/events.php";
               let fData = new FormData();
               fData.append("email", email);
