@@ -6,7 +6,7 @@
 }
 body {
     background-color: rgb(129, 253, 129);
-    background-blend-mode:soft-light
+    background-blend-mode:soft-light;
 }
 .heading {
     text-align:center;

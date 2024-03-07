@@ -10,6 +10,7 @@
 
   <header>
     <h1>Outing Packages</h1>
+    <h2>OUTINGID-100</h2>
   </header>
 
   <main>
@@ -67,124 +68,51 @@
       
     </div>
     <div>
-      <section id="birthday-form">
-        <h2>ADD OUTING</h2>
-        <form id="add-birthday-form">
-            <label for="Yname">Your Name:</label>
-            <input type="text" id="Yname" name="Yname" required>
-            <label for="eventID">EventID:</label>
-            <input type="text" id="eventID" name="eventID" required>
-            <label for="pname">Package Name:</label>
-            <input type="text" id="pname" name="pname" required>
-            <br>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-            <br>
-            <button type="submit">Add Outing</button>
-        </form>
-    </section>
-    
-    <section id="birthday-list">
-        <h2>Outing List</h2>
-        <ul id="birthday-items">
-            <!-- Birthday items will be dynamically added here -->
-        </ul>
-    </section>
-    
+      <form id="add-event-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+  
+        <label for="eventID">EventID:</label>
+        <input type="text" id="eventID" name="eventID" required />
+        <label for="pname">Package Name:</label>
+        <input type="text" id="pname" name="pname" required />
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("add-birthday-form").addEventListener("submit", function (event) {
-                event.preventDefault();
-    
-                var name = document.getElementById("Yname").value;
-                var eventID = document.getElementById("eventID").value;
-                var pname = document.getElementById("pname").value;
-                var date = document.getElementById("date").value;
-    
-                const url = "http://localhost/server/events.php";
-                let fData = new FormData();
-                fData.append("name", name);
-                fData.append("eventID", eventID);
-                fData.append("package", pname); // corrected variable name
-                fData.append("date", date);
-                fetch(url, {
-                    method: "POST",
-                    body: fData,
-                })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                    addBirthday(event);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-            });
-    
-            document.getElementById("birthday-items").addEventListener("click", deleteBirthday);
-    
-            window.addEventListener('load', loadBirthdaysFromLocalStorage);
-        });
-    
-        function addBirthday(event) {
-            event.preventDefault();
-    
-            const name = document.getElementById("Yname").value;
-            const date = document.getElementById("date").value;
-            const pname = document.getElementById("pname").value;
-            const eventID = document.getElementById("eventID").value;
-    
-            const listItem = document.createElement("li");
-            listItem.classList.add("birthday-item");
-            listItem.innerHTML = `<strong>${name}</strong> - ${eventID} - ${pname} - ${date}
-                                <button class="delete-btn">Delete</button>`;
-    
-            const birthdayList = document.getElementById("birthday-items");
-            birthdayList.appendChild(listItem);
-    
-            saveToLocalStorage(name, date, pname, eventID);
-    
-            document.getElementById("Yname").value = "";
-            document.getElementById("date").value = "";
-            document.getElementById("pname").value = "";
-            document.getElementById("eventID").value = "";
-        }
-    
-        function deleteBirthday(event) {
-            if (event.target.classList.contains("delete-btn")) {
-                const listItem = event.target.parentElement;
-                const birthdayList = document.getElementById("birthday-items");
-                birthdayList.removeChild(listItem);
-    
-                removeFromLocalStorage(listItem.querySelector('strong').textContent);
-            }
-        }
-    
-        function saveToLocalStorage(name, date, pname, eventID) {
-            let birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
-            birthdays.push({ name, date, pname, eventID });
-            localStorage.setItem('birthdays', JSON.stringify(birthdays));
-        }
-    
-        function removeFromLocalStorage(name) {
-            let birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
-            birthdays = birthdays.filter(birthday => birthday.name !== name);
-            localStorage.setItem('birthdays', JSON.stringify(birthdays));
-        }
-    
-        function loadBirthdaysFromLocalStorage() {
-            const birthdays = JSON.parse(localStorage.getItem('birthdays')) || [];
-            birthdays.forEach(birthday => {
-                const listItem = document.createElement("li");
-                listItem.classList.add("birthday-item");
-                listItem.innerHTML = `<strong>${birthday.name}</strong> - ${birthday.eventID} - ${birthday.pname} - ${birthday.date}
-                                    <button class="delete-btn">Delete</button>`;
-                const birthdayList = document.getElementById("birthday-items");
-                birthdayList.appendChild(listItem);
-            });
-        }
-    </script>
-    
+      document.addEventListener("DOMContentLoaded", function () {
+          document.getElementById("add-event-form").addEventListener("submit", function (event) {
+              event.preventDefault();
+  
+              var email = document.getElementById("email").value;
+              var eventID = document.getElementById("eventID").value;
+              var pname = document.getElementById("pname").value;
+              var date = document.getElementById("date").value;
+  
+              const url = "http://localhost/server/events.php";
+              let fData = new FormData();
+              fData.append("email", email);
+              fData.append("eventID", eventID);
+              fData.append("package", pname);
+              fData.append("date", date);
+              fetch(url, {
+                  method: "POST",
+                  body: fData,
+              })
+              .then((response) => response.json())
+              .then((data) => {
+                  console.log(data);
+              })
+              .catch((error) => {
+                  console.log(error);
+              });
+          });
+      });
+  </script>
+  
+    </body>
+    </html>
       
-</body>
-</html>
+    

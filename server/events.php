@@ -13,11 +13,11 @@ $conn = new mysqli($serverName, $userName, $password, $dataBaseName);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else {
-    $name = $_POST['name'];
+    $email = $_POST['email'];
     $eventID = $_POST['eventID'];
-    $package = $_POST['package'];
+    $pname = $_POST['pname'];
     $date = $_POST['date']
-    $sql = "INSERT INTO event (name,eventID,package,date) VALUES ('$name', '$eventID', '$package','$date')";
+    $sql = "INSERT INTO event (name,eventID,package,date) VALUES ('$email', '$eventID', '$pname','$date')";
 
     $res = $conn->query($sql);
     if ($res) {
