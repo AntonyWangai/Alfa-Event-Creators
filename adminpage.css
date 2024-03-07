@@ -1,0 +1,61 @@
+table {
+    border-collapse: separate;
+    border-spacing: 10px; /* Adjust the spacing as needed */
+    margin:20px;
+}
+
+th, td {
+    padding: 10px; /* Optional: Add padding for content within cells */
+    border: 1px solid #ddd; /* Optional: Add border for cells */
+}
+
+.heading{
+    background-color: green;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0%;
+    padding:15px;
+
+}
+  body{
+    background-color: rgb(65, 60, 60);
+    margin: 0%;
+    color: aliceblue;
+ } 
+
+ .heading > h1{
+    text-align: center;
+    margin-top: 0%;
+    color:white;
+    font-family: cursive;
+    font-weight: 700;
+    
+ }
+
+ .tablediv{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:86vh;
+    background-image: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+ }
+
+ button{
+    background-color: green;
+    color:white;
+ }
+
+ thead{
+    font-size: 20px;
+    color:green;
+    font-weight: bolder;
+
+ }
+
+ table{
+    background-color: rgba(58, 53, 53, 0.653);
+ }
